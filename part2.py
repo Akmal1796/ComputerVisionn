@@ -1,11 +1,11 @@
 import cv2
 import matplotlib
-matplotlib.use('Agg')  # Use a non-interactive backend
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
 # 1. Load an image using OpenCV
-image_path = 'flower2.jpeg'  # Replace 'image.jpg' with your image file path
+image_path = 'flower2.jpeg'
 image = cv2.imread(image_path)
 
 # Check if the image was loaded successfully
@@ -60,4 +60,4 @@ plt.title('Gaussian Blurred Image')
 plt.axis('off')
 
 plt.tight_layout()
-plt.savefig('transformed_images.png')  # Save the figure to a file
+plt.savefig('transformed_images.png')

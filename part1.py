@@ -1,10 +1,10 @@
 import cv2
 import matplotlib
-matplotlib.use('Agg')  # Use a non-interactive backend
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 # 1. Load an image using OpenCV
-image_path = 'flower1.jpeg'  # Replace 'image.jpg' with your image file path
+image_path = 'flower1.jpeg'
 image = cv2.imread(image_path)
 
 # Check if the image was loaded successfully
@@ -43,4 +43,4 @@ plt.xlabel('Pixel Intensity')
 plt.ylabel('Frequency')
 
 plt.tight_layout()
-plt.savefig('output_plot.png')  # Save the plot to a file
+plt.savefig('output_plot.png')

@@ -1,11 +1,10 @@
 import cv2
 import matplotlib
-matplotlib.use('Agg')  # Use a non-interactive backend
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import numpy as np
 
 # Part 1: Load and process the image
-image_path_part1 = 'flower1.jpeg'  # Replace with your image file path for Part 1
+image_path_part1 = 'flower1.jpeg'
 image_part1 = cv2.imread(image_path_part1)
 
 if image_part1 is None:
@@ -21,7 +20,7 @@ gray_image_part1 = cv2.cvtColor(image_part1, cv2.COLOR_BGR2GRAY)
 histogram_part1 = cv2.calcHist([gray_image_part1], [0], None, [256], [0, 256])
 
 # Part 2: Transform the image
-image_path_part2 = 'flower2.jpeg'  # Replace with your image file path for Part 2
+image_path_part2 = 'flower2.jpeg'
 image_part2 = cv2.imread(image_path_part2)
 
 if image_part2 is None:
@@ -42,13 +41,13 @@ rotated_image_part2 = cv2.warpAffine(image_rgb_part2, rotation_matrix, (width, h
 gaussian_blur_part2 = cv2.GaussianBlur(image_rgb_part2, (15, 15), 0)
 
 # Part 3: Face detection
-haar_cascade_path = 'haarcascade_frontalface_default.xml'  # Replace with your Haar Cascade path
+haar_cascade_path = 'haarcascade_frontalface_default.xml'
 face_cascade = cv2.CascadeClassifier(haar_cascade_path)
 
 if face_cascade.empty():
     raise IOError("Haar Cascade file not found or improperly loaded.")
 
-image_path_part3 = 'image_with_faces.jpg'  # Replace with your image file path for Part 3
+image_path_part3 = 'image_with_faces.jpg'
 image_part3 = cv2.imread(image_path_part3)
 
 if image_part3 is None:
@@ -114,4 +113,4 @@ plt.title('Part 3: Detected Faces')
 plt.axis('off')
 
 plt.tight_layout()
-plt.savefig('combined_output.png')  # Save the combined output to a file
+plt.savefig('combined_output.png')

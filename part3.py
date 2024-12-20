@@ -1,18 +1,18 @@
 import cv2
 import matplotlib
-matplotlib.use('Agg')  # Use a non-interactive backend
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the Haar Cascade file for face detection
-haar_cascade_path = 'haarcascade_frontalface_default.xml'  # Replace with the correct path if necessary
+haar_cascade_path = 'haarcascade_frontalface_default.xml'
 face_cascade = cv2.CascadeClassifier(haar_cascade_path)
 
 if face_cascade.empty():
     raise IOError("Haar Cascade file not found or improperly loaded.")
 
 # Load an image containing human faces
-image_path = 'image_with_faces.jpg'  # Replace with your image file path
+image_path = 'image_with_faces.jpg'
 image = cv2.imread(image_path)
 
 # Check if the image was loaded successfully
@@ -41,4 +41,4 @@ plt.figure(figsize=(10, 10))
 plt.imshow(image_rgb)
 plt.title('Detected Faces')
 plt.axis('off')
-plt.savefig('faces_detected_plot.png')  # Save the figure to a file
+plt.savefig('faces_detected_plot.png')
